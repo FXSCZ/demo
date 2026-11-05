@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Astro Liška</title>
+  <meta name="description" content="Retro vesmírná střílečka ve stylu monochromatického displeje starých mobilů.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="device" aria-label="Herní zařízení">
+    <div class="brand">FOXIOS</div>
+
+    <div class="bezel">
+      <canvas id="screen" width="84" height="48" aria-label="Herní obrazovka"></canvas>
+    </div>
+
+    <div class="controls">
+      <div class="dpad" aria-label="Směrové ovládání">
+        <button class="key up" data-key="up" aria-label="Nahoru">▲</button>
+        <button class="key left" data-key="left" aria-label="Doleva">◀</button>
+        <button class="key right" data-key="right" aria-label="Doprava">▶</button>
+        <button class="key down" data-key="down" aria-label="Dolů">▼</button>
+      </div>
+      <button class="key fire" data-key="fire" aria-label="Střílet">PAL</button>
+    </div>
+
+    <div class="system-keys">
+      <button class="key small" id="btn-start">START / PAUZA</button>
+      <button class="key small" id="btn-sound" aria-pressed="true">ZVUK: ZAP</button>
+    </div>
+  </main>
+
+  <section class="help">
+    <h1>Astro Liška</h1>
+    <p>Pilotuj liščí stíhačku, sestřeluj vlny vetřelců a každou pátou vlnu se postav mateřské lodi.</p>
+    <ul>
+      <li><kbd>←↑↓→</kbd> nebo <kbd>WASD</kbd> pohyb</li>
+      <li><kbd>Mezerník</kbd> nebo <kbd>J</kbd> střelba</li>
+      <li><kbd>Enter</kbd> start, <kbd>P</kbd> pauza, <kbd>M</kbd> zvuk</li>
+      <li>Na mobilu použij tlačítka pod displejem.</li>
+    </ul>
+  </section>
+
+  <script src="game.js"></script>
+</body>
+</html>
