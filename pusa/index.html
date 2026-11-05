@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#ff6f91">
+  <title>Pusa na dálku</title>
+  <meta name="description" content="Roztomilá mobilní hra pro dva: chytej srdíčka, vyhýbej se mráčkům a sbírej pusy.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game" aria-label="Herní plocha"></canvas>
+
+  <div class="top-buttons">
+    <button id="btn-pause" class="round" aria-label="Pauza" hidden>❚❚</button>
+    <button id="btn-sound" class="round" aria-label="Vypnout zvuk" aria-pressed="true">♪</button>
+  </div>
+
+  <section id="menu" class="overlay">
+    <div class="card">
+      <h1>Pusa na dálku</h1>
+      <p class="lead">Chytej srdíčka, uhýbej mráčkům. Když naplníte srdce, přijde pusa.</p>
+
+      <div class="players">
+        <div class="player" data-player="0">
+          <label class="photo" for="file-0">
+            <img id="preview-0" alt="Fotka hráče 1">
+            <span>Změnit fotku</span>
+          </label>
+          <input id="file-0" type="file" accept="image/*" hidden>
+          <input id="name-0" class="name" maxlength="14" value="On" aria-label="Jméno hráče 1">
+        </div>
+        <div class="heart-sep" aria-hidden="true">❤</div>
+        <div class="player" data-player="1">
+          <label class="photo" for="file-1">
+            <img id="preview-1" alt="Fotka hráče 2">
+            <span>Změnit fotku</span>
+          </label>
+          <input id="file-1" type="file" accept="image/*" hidden>
+          <input id="name-1" class="name" maxlength="14" value="Ona" aria-label="Jméno hráče 2">
+        </div>
+      </div>
+
+      <label class="check">
+        <input id="remember" type="checkbox">
+        Zapamatovat fotky a jména v tomto telefonu
+      </label>
+
+      <div class="modes">
+        <p class="mode-title">Hraju sám/sama za:</p>
+        <div class="seg" role="radiogroup" aria-label="Za koho hraješ">
+          <button class="seg-btn active" data-me="0" role="radio" aria-checked="true" id="me-0">On</button>
+          <button class="seg-btn" data-me="1" role="radio" aria-checked="false" id="me-1">Ona</button>
+        </div>
+        <button id="btn-solo" class="primary">Hrát</button>
+        <button id="btn-duo" class="secondary">Hrát ve dvou na jednom mobilu</button>
+      </div>
+
+      <p class="record" id="record"></p>
+
+      <div class="footer">
+        <button id="btn-share" class="link">Poslat odkaz na hru</button>
+        <button id="btn-clear" class="link">Smazat fotky</button>
+      </div>
+      <p class="privacy">Fotky zůstávají jen v tomto zařízení. Nic se nikam neodesílá.</p>
+    </div>
+  </section>
+
+  <section id="pause" class="overlay" hidden>
+    <div class="card small">
+      <h2>Pauza</h2>
+      <button id="btn-resume" class="primary">Pokračovat</button>
+      <button id="btn-quit" class="secondary">Do menu</button>
+    </div>
+  </section>
+
+  <section id="over" class="overlay" hidden>
+    <div class="card small">
+      <h2>Mráčky vyhrály</h2>
+      <p class="big" id="over-score"></p>
+      <p id="over-record"></p>
+      <button id="btn-again" class="primary">Znovu</button>
+      <button id="btn-menu" class="secondary">Do menu</button>
+    </div>
+  </section>
+
+  <script src="game.js"></script>
+</body>
+</html>
