@@ -3,6 +3,9 @@
 Retro horizontální vesmírná střílečka ve stylu monochromatického displeje starých mobilů.
 Ukázkový mikroprojekt společnosti Foxios pro práci s GitHubem a Claude Code.
 
+> V repozitáři je i druhá hra: **[Pusa na dálku](pusa/)** – romantická mobilní hra pro dva
+> (`https://fxscz.github.io/demo/pusa/`).
+
 ## Jak hrát
 
 | Akce | Klávesnice | Dotyk |
